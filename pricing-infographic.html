@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Pricing Infographic — Midland Studio</title>
+<style>
+  /* Self-contained so this file can be emailed/shared on its own.
+     Canvas is a fixed 1080x1350 (Instagram/Facebook portrait, also prints clean). */
+  :root{
+    --red:#c8102e; --red-dark:#9c0c23; --gold:#c9a227; --gold-soft:#e7d9a3;
+    --charcoal:#1a1a1a; --ink:#2b2b2b; --muted:#6f6f6f; --line:#ececec; --bg-soft:#faf8f5;
+    --font:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#e9e9e9;font-family:var(--font);display:flex;justify-content:center;padding:24px}
+
+  .poster{
+    width:1080px;height:1350px;background:#fff;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.18);
+  }
+
+  /* ---- Header ---- */
+  .head{background:var(--charcoal);padding:30px 54px;display:flex;align-items:center;justify-content:space-between;position:relative}
+  .head::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;
+    background:linear-gradient(90deg,var(--red) 0%,var(--red) 55%,var(--gold) 55%,var(--gold) 100%)}
+  .logo{display:flex;align-items:center;gap:14px}
+  .mark{width:52px;height:52px;border-radius:13px;background:linear-gradient(135deg,var(--red),var(--red-dark));
+    display:grid;place-items:center;color:#fff;font-weight:800;font-size:1.6rem;box-shadow:inset 0 0 0 2px var(--gold)}
+  .logo-txt{color:#fff;font-weight:800;font-size:1.5rem;letter-spacing:-.02em;line-height:1.15}
+  .logo-txt b{color:var(--gold);font-weight:800}
+  .head-right{text-align:right;color:#b9b9b9;font-size:.86rem;line-height:1.5;font-weight:600}
+  .head-right span{color:var(--gold)}
+
+  /* ---- Title ---- */
+  .title{text-align:center;padding:40px 54px 28px}
+  .eyebrow{display:inline-block;font-size:.8rem;font-weight:800;letter-spacing:.22em;color:var(--red);text-transform:uppercase}
+  .eyebrow::after{content:"";display:block;width:52px;height:3px;background:var(--gold);margin:11px auto 0;border-radius:2px}
+  .title h1{font-size:3.1rem;font-weight:800;color:var(--charcoal);letter-spacing:-.025em;margin:18px 0 12px;line-height:1.08}
+  .title h1 em{color:var(--red);font-style:normal}
+  .title p{color:var(--muted);font-size:1.12rem;max-width:660px;margin:0 auto}
+
+  /* ---- Plans ---- */
+  .plans{flex:1;display:grid;grid-template-columns:1fr 1.12fr 1fr;gap:20px;padding:0 46px;align-items:center}
+  .plan{background:#fff;border:1px solid var(--line);border-radius:18px;padding:38px 28px;position:relative;
+    box-shadow:0 4px 18px rgba(0,0,0,.05)}
+  .plan.pop{background:var(--charcoal);border:none;padding:48px 30px 44px;box-shadow:0 18px 44px rgba(200,16,46,.32)}
+  .plan.pop::before{content:"MOST POPULAR";position:absolute;top:-12px;left:50%;transform:translateX(-50%);
+    background:var(--red);color:#fff;font-size:.64rem;font-weight:800;letter-spacing:.14em;padding:7px 18px;border-radius:999px;white-space:nowrap}
+
+  .plan h2{font-size:1.75rem;font-weight:800;color:var(--charcoal);letter-spacing:-.01em}
+  .plan.pop h2{color:#fff}
+  .plan .tag{color:var(--muted);font-size:.95rem;margin-top:6px;min-height:46px;line-height:1.4}
+  .plan.pop .tag{color:var(--gold-soft)}
+
+  .price{margin:20px 0 8px;display:flex;align-items:baseline;gap:2px}
+  .price .amt{font-size:4.3rem;font-weight:800;color:var(--charcoal);letter-spacing:-.03em;line-height:1}
+  .plan.pop .price .amt{color:#fff}
+  .price .plus{font-size:2.4rem;font-weight:800;color:var(--gold);line-height:1}
+  .price .per{font-size:1.05rem;font-weight:700;color:var(--muted);margin-left:3px}
+  .plan.pop .price .per{color:#9a9a9a}
+
+  .rule{height:1px;background:var(--line);margin:22px 0}
+  .plan.pop .rule{background:#3a3a3a}
+
+  .plan ul{list-style:none}
+  .plan li{position:relative;padding:11px 0 11px 30px;font-size:1rem;color:var(--ink);line-height:1.4}
+  .plan.pop li{color:#e2e2e2}
+  .plan li::before{content:"✓";position:absolute;left:0;top:12px;width:19px;height:19px;border-radius:50%;
+    background:rgba(200,16,46,.10);color:var(--red);font-size:.66rem;font-weight:800;display:grid;place-items:center}
+  .plan.pop li::before{background:rgba(201,162,39,.22);color:var(--gold)}
+  .plan li.hdr{font-weight:800;color:var(--charcoal);padding-left:30px}
+  .plan.pop li.hdr{color:var(--gold)}
+  .plan li.hdr::before{content:"★";background:rgba(201,162,39,.20);color:var(--gold)}
+
+  /* ---- Guarantee strip ---- */
+  .strip{margin:26px 46px 0;background:var(--bg-soft);border:1px solid var(--gold-soft);border-radius:14px;
+    padding:18px 26px;display:flex;justify-content:space-around;align-items:center;gap:12px}
+  .strip div{text-align:center}
+  .strip .k{font-size:1.15rem;font-weight:800;color:var(--red);letter-spacing:-.01em}
+  .strip .v{font-size:.76rem;color:var(--muted);font-weight:600;margin-top:2px}
+
+  /* ---- Footer ---- */
+  .foot{background:var(--charcoal);margin-top:26px;padding:24px 54px;display:flex;justify-content:space-between;align-items:center;position:relative}
+  .foot::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;
+    background:linear-gradient(90deg,var(--gold) 0%,var(--gold) 45%,var(--red) 45%,var(--red) 100%)}
+  .foot .site{color:#fff;font-weight:800;font-size:1.18rem;letter-spacing:-.01em}
+  .foot .site span{color:var(--gold)}
+  .foot .contact{text-align:right;color:#b0b0b0;font-size:.85rem;font-weight:600;line-height:1.5}
+  .foot .contact b{color:#fff;font-size:1.05rem;display:block}
+
+  /* PDF/print export: one full-bleed US Letter page.
+     zoom (not transform) so the layout box shrinks too and it stays on a single page.
+     1080px * 0.7556 = 816px = 8.5in wide; 1350px * 0.7556 = 1020px, inside Letter's 1056px. */
+  @page{size:letter portrait;margin:0}
+  @media print{
+    body{background:#fff;padding:0;display:block}
+    .poster{box-shadow:none;zoom:.7556}
+    .plan,.strip,.foot,.head{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<div class="poster">
+
+  <!-- Header -->
+  <div class="head">
+    <div class="logo">
+      <div class="mark">M</div>
+      <div class="logo-txt">Midland<br><b>Studio</b></div>
+    </div>
+    <div class="head-right">
+      Web Design &nbsp;•&nbsp; SEO &nbsp;•&nbsp; AI Solutions<br>
+      <span>Richmond &nbsp;•&nbsp; Charlottesville</span>
+    </div>
+  </div>
+
+  <!-- Title -->
+  <div class="title">
+    <span class="eyebrow">Our Pricing</span>
+    <h1>Simple Plans That <em>Grow With You</em></h1>
+    <p>Everything handled for one flat monthly price. No setup fees, no contracts, and a local team that actually answers.</p>
+  </div>
+
+  <!-- Plans -->
+  <div class="plans">
+
+    <!-- Starter -->
+    <div class="plan">
+      <h2>Starter</h2>
+      <div class="tag">Get online fast and start getting found.</div>
+      <div class="price"><span class="amt">$175</span><span class="per">/mo</span></div>
+      <div class="rule"></div>
+      <ul>
+        <li>Custom mobile-friendly website</li>
+        <li>Domain, hosting &amp; SSL included</li>
+        <li>1 business email</li>
+        <li>Basic SEO setup</li>
+        <li>10 content updates / month</li>
+        <li>24/7 uptime monitoring</li>
+      </ul>
+    </div>
+
+    <!-- Professional -->
+    <div class="plan pop">
+      <h2>Professional</h2>
+      <div class="tag">Everything you need to outrank competitors.</div>
+      <div class="price"><span class="amt">$350</span><span class="per">/mo</span></div>
+      <div class="rule"></div>
+      <ul>
+        <li class="hdr">Everything in Starter, plus:</li>
+        <li>Premium custom design</li>
+        <li>Google Business management</li>
+        <li>On-page SEO optimization</li>
+        <li>1–2 SEO blog posts / month</li>
+        <li>Unlimited content updates</li>
+        <li>Booking &amp; CRM systems</li>
+        <li>Monthly reporting</li>
+      </ul>
+    </div>
+
+    <!-- Business -->
+    <div class="plan">
+      <h2>Business</h2>
+      <div class="tag">Your full digital team, on demand.</div>
+      <div class="price"><span class="amt">$700</span><span class="plus">+</span><span class="per">/mo</span></div>
+      <div class="rule"></div>
+      <ul>
+        <li class="hdr">Everything in Pro, plus:</li>
+        <li>AI chatbot &amp; automation</li>
+        <li>Custom SEO strategy</li>
+        <li>Custom software development</li>
+        <li>Dedicated account manager</li>
+        <li>Same-day support</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Guarantee strip -->
+  <div class="strip">
+    <div><div class="k">$0</div><div class="v">SETUP FEES</div></div>
+    <div><div class="k">No Contracts</div><div class="v">MONTH-TO-MONTH</div></div>
+    <div><div class="k">Cancel Anytime</div><div class="v">NO COMMITMENTS</div></div>
+    <div><div class="k">100% Local</div><div class="v">CENTRAL VIRGINIA</div></div>
+  </div>
+
+  <!-- Footer -->
+  <div class="foot">
+    <div class="site">LocalVirginia<span>Websites</span>.com</div>
+    <div class="contact">
+      <b>(954) 870-2204</b>
+      Call or text for a free quote
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Local Lawn Care SEO Checklist — Midland Studio</title>
+  <meta name="description" content="An actionable, checkable local SEO checklist built from a real competitor analysis of top lawn care sites, tuned for Norwoods Home & Lawn.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .progwrap { position:sticky; top:74px; z-index:20; background:#fff; border:1px solid var(--line); border-radius:12px; padding:16px 20px; box-shadow:var(--shadow-sm); margin-bottom:30px; }
+    .progwrap .top { display:flex; justify-content:space-between; align-items:center; gap:12px; flex-wrap:wrap; }
+    .progwrap b { color:var(--charcoal); }
+    .progbar { height:12px; background:#f0f0f0; border-radius:999px; overflow:hidden; margin-top:10px; }
+    .progbar i { display:block; height:100%; background:linear-gradient(90deg,var(--red),var(--gold)); width:0; transition:width .35s ease; }
+    .grp { background:#fff; border:1px solid var(--line); border-radius:var(--radius); box-shadow:var(--shadow-sm); padding:8px 26px 14px; margin-bottom:22px; }
+    .grp > h3 { display:flex; align-items:center; gap:10px; padding:16px 0 6px; border-bottom:2px solid var(--gold); }
+    .ck { list-style:none; padding:0; margin:0; }
+    .ck li { display:flex; gap:14px; align-items:flex-start; padding:15px 0; border-bottom:1px solid #f2f2f2; }
+    .ck li:last-child { border-bottom:0; }
+    .ck input { margin-top:2px; width:21px; height:21px; accent-color:var(--red); flex:0 0 auto; cursor:pointer; }
+    .ck .txt { flex:1; }
+    .ck .txt label { font-weight:700; color:var(--charcoal); cursor:pointer; }
+    .ck .txt p { margin:5px 0 0; color:var(--muted); font-size:.9rem; }
+    .badge, .st { display:inline-block; font-size:.66rem; font-weight:800; letter-spacing:.05em; text-transform:uppercase; padding:3px 9px; border-radius:999px; margin-left:6px; vertical-align:middle; }
+    .badge.hi { background:rgba(200,16,46,.12); color:var(--red); }
+    .badge.med { background:rgba(201,162,39,.20); color:#8a6d15; }
+    .badge.low { background:#eee; color:#666; }
+    .st.done { background:rgba(46,204,113,.16); color:#1e874b; }
+    .st.partial { background:rgba(201,162,39,.20); color:#8a6d15; }
+    .st.todo { background:rgba(200,16,46,.10); color:var(--red); }
+    .st.off { background:#e9edf5; color:#4a5a75; }
+    .kwbox { background:var(--bg-soft); border:1px solid var(--line); border-radius:var(--radius); padding:24px 28px; margin-bottom:14px; }
+    .kwbox h4 { margin:0 0 8px; color:var(--red); }
+    .kwbox code { background:#fff; border:1px solid var(--line); border-radius:6px; padding:2px 8px; font-family:ui-monospace,Consolas,monospace; font-size:.86em; color:var(--charcoal); display:inline-block; margin:3px 4px 3px 0; }
+    .kwbox p { color:var(--ink); margin:0 0 6px; }
+    .legend { display:flex; gap:16px; flex-wrap:wrap; font-size:.82rem; color:var(--muted); margin-top:10px; }
+    .legend span b { color:var(--charcoal); }
+    .resetbtn { background:none; border:1px solid var(--line); border-radius:999px; padding:7px 16px; font-size:.82rem; font-weight:700; color:var(--muted); cursor:pointer; }
+    .resetbtn:hover { border-color:var(--red); color:var(--red); }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <span class="tag">Midland Studio · Learning Library</span>
+      <span>Call or text: <a href="tel:+19548702204">(954) 870-2204</a></span>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="mark">M</span> Midland <b>Studio</b></a>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="seo.html">SEO</a></li>
+        <li><a href="seo-guide.html">SEO Guide</a></li>
+        <li><a href="seo-checklist.html">Checklist</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn-primary">Get Started</a>
+      <button class="menu-toggle" onclick="document.querySelector('.menu').style.display='flex'">☰</button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow" style="color:var(--gold)">Phase 3 · Built From Real Data</span>
+      <h1>Local Lawn Care <span>SEO Checklist</span></h1>
+      <p>Every item below is something the top lawn care sites are actually doing to rank. Each is tagged with where Norwoods Home &amp; Lawn stands today. Check items off as you go; your progress saves automatically.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap" style="max-width:960px">
+
+      <!-- progress -->
+      <div class="progwrap">
+        <div class="top">
+          <b id="progPct">0% complete</b>
+          <button class="resetbtn" id="resetBtn">Reset progress</button>
+        </div>
+        <div class="progbar"><i id="progFill"></i></div>
+        <div class="legend">
+          <span><b>Priority:</b></span>
+          <span><span class="badge hi">High</span> do first</span>
+          <span><span class="badge med">Med</span> next</span>
+          <span><span class="badge low">Low</span> polish</span>
+          <span style="margin-left:10px"><b>Norwoods now:</b></span>
+          <span><span class="st done">Done</span></span>
+          <span><span class="st partial">Partial</span></span>
+          <span><span class="st todo">To do</span></span>
+          <span><span class="st off">Off-site</span></span>
+        </div>
+      </div>
+
+      <!-- keyword targets -->
+      <div class="kwbox">
+        <h4>The keyword map (what these pages target)</h4>
+        <p><b>Homepage:</b> <code>lawn care Charlottesville VA area</code> <code>home &amp; lawn services</code></p>
+        <p><b>One page per town</b> (the big move): <code>Lawn Care in Charlottesville, VA</code> <code>Orange, VA</code> <code>Louisa, VA</code> <code>Madison, VA</code> <code>Gordonsville, VA</code> <code>Culpeper, VA</code></p>
+        <p><b>Core service terms to cover:</b> <code>lawn mowing</code> <code>leaf removal</code> <code>brush removal</code> <code>tree removal</code> <code>snow removal</code> <code>pressure washing</code> <code>mulching</code> <code>hedge trimming</code> <code>gutter cleaning</code> <code>landscaping</code></p>
+        <p><b>Crossover terms your "Home &amp; Lawn" brand can grab</b> (mowing-only locals miss these): <code>gutter cleaning [town] VA</code> <code>pressure washing [town] VA</code></p>
+        <p><b>Seasonal + intent:</b> <code>leaf removal [town] VA</code> <code>snow removal [town] VA</code> <code>lawn care near me</code> <code>free lawn care estimate [town]</code></p>
+      </div>
+
+      <!-- A. On-page -->
+      <div class="grp">
+        <h3>A. On-Page SEO <span style="font-size:.8rem;font-weight:600;color:var(--muted)">(every page)</span></h3>
+        <ul class="ck">
+          <li><input type="checkbox" data-k="a1" id="a1"><div class="txt"><label for="a1">Title tag formula: <code>[Service] in [City], VA | Norwoods Home &amp; Lawn</code> (~55 chars)<span class="badge hi">High</span><span class="st done">Done</span></label><p>Lead with the keyword and city, not the brand. Winning example from the analysis: "Best Lawn Care Services in Charlottesville, VA."</p></div></li>
+          <li><input type="checkbox" data-k="a2" id="a2"><div class="txt"><label for="a2">One H1 per page that includes the primary keyword + city<span class="badge hi">High</span><span class="st todo">To do</span></label><p>Norwoods' homepage H1 is currently the tagline. Jack's, Landscapology, and Meriweather all waste their H1 on the brand name. Beat them by putting "Lawn Care in [City], VA" in the H1.</p></div></li>
+          <li><input type="checkbox" data-k="a3" id="a3"><div class="txt"><label for="a3">H2s use natural service + city phrases<span class="badge med">Med</span><span class="st partial">Partial</span></label><p>e.g. "Reliable Lawn Mowing in Culpeper, VA." cvillelawncare puts the city in nearly every heading.</p></div></li>
+          <li><input type="checkbox" data-k="a4" id="a4"><div class="txt"><label for="a4">Meta description ~155 chars with service + city + a "free estimate / 540-938-0395" hook<span class="badge hi">High</span><span class="st done">Done</span></label><p>Does not change rankings directly, but drives clicks. Every top site uses a strong quote/estimate hook.</p></div></li>
+          <li><input type="checkbox" data-k="a5" id="a5"><div class="txt"><label for="a5">Short, keyword-bearing URL slugs<span class="badge med">Med</span><span class="st todo">To do</span></label><p>e.g. <code>/lawn-care-culpeper-va</code>. Needed once the town pages exist.</p></div></li>
+          <li><input type="checkbox" data-k="a6" id="a6"><div class="txt"><label for="a6">Descriptive alt text on every meaningful image<span class="badge med">Med</span><span class="st done">Done</span></label><p>Norwoods images already have alt text. Add service/city words where natural on the new pages.</p></div></li>
+          <li><input type="checkbox" data-k="a7" id="a7"><div class="txt"><label for="a7">Internal links between service pages and town pages<span class="badge med">Med</span><span class="st todo">To do</span></label><p>Use descriptive anchor text ("lawn mowing in Orange, VA"). Builds structure and spreads ranking strength.</p></div></li>
+          <li><input type="checkbox" data-k="a8" id="a8"><div class="txt"><label for="a8">Clear primary CTA on every page (Free Estimate + call + text)<span class="badge hi">High</span><span class="st done">Done</span></label><p>Norwoods has estimate + call. Add a text-to-quote number to match cvillelawncare.</p></div></li>
+          <li><input type="checkbox" data-k="a9" id="a9"><div class="txt"><label for="a9">Keep copy natural, no keyword stuffing<span class="badge low">Low</span><span class="st done">Done</span></label><p>Use each keyword where it belongs, then stop.</p></div></li>
+        </ul>
+      </div>
+
+      <!-- B. Local -->
+      <div class="grp">
+        <h3>B. Local SEO <span style="font-size:.8rem;font-weight:600;color:var(--muted)">(biggest lever for a service business)</span></h3>
+        <ul class="ck">
+          <li><input type="checkbox" data-k="b1" id="b1"><div class="txt"><label for="b1">Google Business Profile claimed &amp; 100% complete<span class="badge hi">High</span><span class="st off">Off-site</span></label><p>Name, service area, phone, hours, website, categories (Lawn Care Service + Landscaper), full services list, and 15+ real photos. This drives the map pack, where most local leads come from.</p></div></li>
+          <li><input type="checkbox" data-k="b2" id="b2"><div class="txt"><label for="b2">NAP identical everywhere<span class="badge hi">High</span><span class="st todo">To do</span></label><p>"Norwoods Home &amp; Lawn LLC" + 540-938-0395 + service area, matched exactly on the site, GBP, Facebook, and every directory.</p></div></li>
+          <li><input type="checkbox" data-k="b3" id="b3"><div class="txt"><label for="b3">"Proudly Serving Charlottesville, Orange, Louisa, Madison, Gordonsville &amp; Culpeper" section<span class="badge hi">High</span><span class="st done">Done</span></label><p>Norwoods lists the area in the footer; make it a prominent named section like the top locals do.</p></div></li>
+          <li><input type="checkbox" data-k="b4" id="b4"><div class="txt"><label for="b4">Six dedicated city landing pages (one per town)<span class="badge hi">High</span><span class="st todo">To do</span></label><p>The single highest-leverage structural move. Copies Virginia Green's winning silo. No local competitor covers all your towns.</p></div></li>
+          <li><input type="checkbox" data-k="b5" id="b5"><div class="txt"><label for="b5">Name neighborhoods/subdivisions on each town page<span class="badge med">Med</span><span class="st todo">To do</span></label><p>Hyper-local long-tail the competitors leave wide open across your six-town footprint.</p></div></li>
+          <li><input type="checkbox" data-k="b6" id="b6"><div class="txt"><label for="b6">Review engine: direct Google review link, ask every customer, respond to all<span class="badge hi">High</span><span class="st off">Off-site</span></label><p>Volume, recency, and rating are rocket fuel for local rankings and conversion.</p></div></li>
+          <li><input type="checkbox" data-k="b7" id="b7"><div class="txt"><label for="b7">Citations in Yelp, Angi, Nextdoor, BBB, chamber of commerce<span class="badge med">Med</span><span class="st todo">To do</span></label><p>Consistent NAP across trusted directories builds local trust.</p></div></li>
+          <li><input type="checkbox" data-k="b8" id="b8"><div class="txt"><label for="b8">A few quality local backlinks<span class="badge med">Med</span><span class="st todo">To do</span></label><p>Chamber, local sponsorships, partner mentions. Quality over quantity, never buy links.</p></div></li>
+        </ul>
+      </div>
+
+      <!-- C. Technical -->
+      <div class="grp">
+        <h3>C. Technical SEO</h3>
+        <ul class="ck">
+          <li><input type="checkbox" data-k="c1" id="c1"><div class="txt"><label for="c1">Site hosted, live, and indexable<span class="badge hi">High</span><span class="st todo">To do</span></label><p>The prerequisite for everything. Nothing ranks until Google can reach and index the site.</p></div></li>
+          <li><input type="checkbox" data-k="c2" id="c2"><div class="txt"><label for="c2">HTTPS enabled<span class="badge hi">High</span><span class="st todo">To do</span></label><p>A confirmed ranking signal and a trust basic. Free with modern hosting.</p></div></li>
+          <li><input type="checkbox" data-k="c3" id="c3"><div class="txt"><label for="c3">Fully mobile responsive<span class="badge hi">High</span><span class="st done">Done</span></label><p>Norwoods is already responsive. Google ranks the mobile version.</p></div></li>
+          <li><input type="checkbox" data-k="c4" id="c4"><div class="txt"><label for="c4">Fast load / Core Web Vitals in the green<span class="badge med">Med</span><span class="st partial">Partial</span></label><p>Compress the large photos (several are 600KB–1MB) so LCP stays under 2.5s.</p></div></li>
+          <li><input type="checkbox" data-k="c5" id="c5"><div class="txt"><label for="c5">LocalBusiness + Service + AggregateRating JSON-LD schema sitewide<span class="badge hi">High</span><span class="st done">Done</span></label><p><b>Your biggest free win:</b> not one of the 8 competitors has it. Adding it makes you eligible for review-star rich results and strengthens local-pack placement.</p></div></li>
+          <li><input type="checkbox" data-k="c6" id="c6"><div class="txt"><label for="c6">XML sitemap + robots.txt, submitted to Search Console<span class="badge med">Med</span><span class="st todo">To do</span></label><p>Speeds up discovery and indexing of all your pages.</p></div></li>
+          <li><input type="checkbox" data-k="c7" id="c7"><div class="txt"><label for="c7">Google Search Console + GA4 installed<span class="badge hi">High</span><span class="st todo">To do</span></label><p>Set up the day the site goes live so you can see the terms you rank for and track conversions.</p></div></li>
+        </ul>
+      </div>
+
+      <!-- D. Content -->
+      <div class="grp">
+        <h3>D. Content Strategy</h3>
+        <ul class="ck">
+          <li><input type="checkbox" data-k="d1" id="d1"><div class="txt"><label for="d1">A dedicated page per core service<span class="badge hi">High</span><span class="st todo">To do</span></label><p>Mowing, leaf removal, snow removal, pressure washing, etc. Norwoods currently has one combined "What We Do" section; individual pages target each service keyword fully.</p></div></li>
+          <li><input type="checkbox" data-k="d2" id="d2"><div class="txt"><label for="d2">Six location pages (ties to B4)<span class="badge hi">High</span><span class="st todo">To do</span></label><p>One per town, service + city in the title, H1, and H2s.</p></div></li>
+          <li><input type="checkbox" data-k="d3" id="d3"><div class="txt"><label for="d3">Central Virginia lawn guides / blog<span class="badge med">Med</span><span class="st todo">To do</span></label><p>"Best Grass Types for Central Virginia Lawns," "When to Aerate &amp; Overseed in the Piedmont," "Common Lawn Pests in the Charlottesville Area," seasonal tips. Virginia Green owns this; no local competitor has any of it.</p></div></li>
+          <li><input type="checkbox" data-k="d4" id="d4"><div class="txt"><label for="d4">A named guarantee ("The Norwoods Satisfaction Guarantee")<span class="badge med">Med</span><span class="st done">Done</span></label><p>Norwoods has a satisfaction stamp; make it a named, explained program like TruGreen's and Virginia Green's guarantees.</p></div></li>
+          <li><input type="checkbox" data-k="d5" id="d5"><div class="txt"><label for="d5">FAQ content targeting question searches<span class="badge low">Low</span><span class="st done">Done</span></label><p>Norwoods already has an FAQ section. Add local questions ("How much does lawn mowing cost in Culpeper?").</p></div></li>
+        </ul>
+      </div>
+
+      <!-- E. Trust & Conversion -->
+      <div class="grp">
+        <h3>E. Trust &amp; Conversion</h3>
+        <ul class="ck">
+          <li><input type="checkbox" data-k="e1" id="e1"><div class="txt"><label for="e1">Quantified trust up front: family owned, since 2024, satisfaction guaranteed<span class="badge hi">High</span><span class="st done">Done</span></label><p>Norwoods leads with this already. It is exactly what every strong local site does.</p></div></li>
+          <li><input type="checkbox" data-k="e2" id="e2"><div class="txt"><label for="e2">Real reviews displayed with review schema markup<span class="badge hi">High</span><span class="st done">Done</span></label><p>Norwoods shows Cody and Gerald's reviews; marking them up as review schema lets star ratings appear in search, which no competitor currently earns.</p></div></li>
+          <li><input type="checkbox" data-k="e3" id="e3"><div class="txt"><label for="e3">Multiple conversion paths: call, text-to-quote, form<span class="badge med">Med</span><span class="st partial">Partial</span></label><p>Add a text-to-quote number to the existing call + form.</p></div></li>
+          <li><input type="checkbox" data-k="e4" id="e4"><div class="txt"><label for="e4">"Upload photos for a fast quote" option<span class="badge low">Low</span><span class="st todo">To do</span></label><p>cvillelawncare's standout lead flow. A nice differentiator to add later.</p></div></li>
+        </ul>
+      </div>
+
+      <!-- F. Measurement -->
+      <div class="grp">
+        <h3>F. Measurement &amp; Upkeep</h3>
+        <ul class="ck">
+          <li><input type="checkbox" data-k="f1" id="f1"><div class="txt"><label for="f1">Watch Search Console monthly (impressions, clicks, position, queries)<span class="badge med">Med</span><span class="st todo">To do</span></label><p>See which terms you show for and double down on what climbs.</p></div></li>
+          <li><input type="checkbox" data-k="f2" id="f2"><div class="txt"><label for="f2">Track conversions in GA4 (calls, form submits, quote requests)<span class="badge med">Med</span><span class="st todo">To do</span></label><p>The only metric that pays the bills.</p></div></li>
+          <li><input type="checkbox" data-k="f3" id="f3"><div class="txt"><label for="f3">Keep going: add content, gather reviews, refresh pages<span class="badge low">Low</span><span class="st todo">To do</span></label><p>SEO compounds over months. Consistency wins.</p></div></li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="section section--soft">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>Ready to apply this to Norwoods?</h2>
+        <p>Phase 4 takes the "To do" items I can do in code, title tags, H1s, meta, schema, town pages, and the serving-area section, and builds them into the Norwoods site. The off-site items (Google Business Profile, reviews, citations) I'll hand you as a short do-it-yourself list.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <a href="seo-guide.html" class="btn btn-gold">Back to the Guide</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap foot-grid">
+      <div>
+        <div class="brand"><span class="mark">M</span> Midland <b>Studio</b></div>
+        <p class="foot-about">A Central Virginia web design company helping small businesses grow online with custom websites, SEO, and AI solutions. Serving Richmond, Charlottesville, and everywhere between.</p>
+      </div>
+      <div><h4>Learn</h4><a href="seo.html">SEO Services</a><a href="seo-guide.html">SEO Guide</a><a href="seo-checklist.html">SEO Checklist</a><a href="pricing.html">Pricing</a></div>
+      <div><h4>Company</h4><a href="index.html">Home</a><a href="index.html#contact">Contact</a><a href="index.html#work">Portfolio</a></div>
+      <div><h4>Get in Touch</h4><a href="tel:+19548702204">(954) 870-2204</a><a href="sms:+19548702204">Text us anytime</a><a href="mailto:hello@localvirginiawebsites.com">hello@localvirginiawebsites.com</a></div>
+    </div>
+    <div class="wrap foot-bottom"><span>© 2026 Midland Studio. All rights reserved.</span><span>Richmond • Charlottesville • Central Virginia</span></div>
+  </footer>
+
+  <script>
+    (function(){
+      var boxes = document.querySelectorAll('input[type=checkbox][data-k]');
+      var fill = document.getElementById('progFill');
+      var pct = document.getElementById('progPct');
+      function key(b){ return 'norwoods_seock_' + b.dataset.k; }
+      function load(){ boxes.forEach(function(b){ var v = localStorage.getItem(key(b)); if(v!==null) b.checked = (v==='1'); }); }
+      function update(){
+        var done = 0; boxes.forEach(function(b){ if(b.checked) done++; });
+        var p = boxes.length ? Math.round(done/boxes.length*100) : 0;
+        fill.style.width = p + '%';
+        pct.textContent = p + '% complete (' + done + ' of ' + boxes.length + ')';
+      }
+      load();
+      boxes.forEach(function(b){ b.addEventListener('change', function(){ localStorage.setItem(key(b), b.checked?'1':'0'); update(); }); });
+      document.getElementById('resetBtn').addEventListener('click', function(){
+        boxes.forEach(function(b){ b.checked = false; localStorage.removeItem(key(b)); });
+        update();
+      });
+      update();
+    })();
+  </script>
+
+</body>
+</html>

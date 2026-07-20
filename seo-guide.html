@@ -1,0 +1,433 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Complete SEO Guide — Midland Studio</title>
+  <meta name="description" content="A plain-English, start-to-finish guide to search engine optimization: how search works, keywords, on-page, technical, local SEO, links, and measurement.">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    /* Guide-specific components (scoped to this learning page) */
+    .toc { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:26px 30px; box-shadow:var(--shadow-sm); }
+    .toc h4 { margin:0 0 14px; color:var(--charcoal); }
+    .toc ol { margin:0; padding-left:20px; columns:2; column-gap:40px; }
+    .toc li { margin:0 0 9px; font-weight:600; }
+    .toc a { color:var(--ink); }
+    .toc a:hover { color:var(--red); }
+    .prose { max-width:820px; margin:0 auto; }
+    .prose h3 { margin-top:34px; }
+    .prose p, .prose li { color:var(--ink); }
+    .prose ul, .prose ol { padding-left:22px; }
+    .prose li { margin-bottom:8px; }
+    .callout { background:var(--bg-soft); border-left:4px solid var(--gold); border-radius:10px; padding:18px 22px; margin:22px 0; }
+    .callout.red { border-left-color:var(--red); }
+    .callout b { color:var(--charcoal); }
+    .check { list-style:none; padding:0; margin:16px 0; }
+    .check li { position:relative; padding:9px 0 9px 34px; border-bottom:1px solid #f1f1f1; font-size:.97rem; }
+    .check li::before { content:"✓"; position:absolute; left:0; top:8px; width:22px; height:22px; background:rgba(200,16,46,.10); color:var(--red); border-radius:6px; display:grid; place-items:center; font-size:.75rem; font-weight:800; }
+    code, .kbd { background:#f3f0ea; border:1px solid var(--line); border-radius:6px; padding:2px 7px; font-family:ui-monospace,Consolas,monospace; font-size:.88em; color:var(--charcoal); }
+    .example { background:var(--charcoal); color:#e8e8e8; border-radius:12px; padding:18px 22px; margin:18px 0; font-family:ui-monospace,Consolas,monospace; font-size:.85rem; overflow-x:auto; }
+    .example .g { color:var(--gold); }
+    .example .r { color:#ff8a9c; }
+    details.q { background:#fff; border:1px solid var(--line); border-radius:12px; margin-bottom:12px; padding:0 20px; }
+    details.q summary { cursor:pointer; font-weight:700; color:var(--charcoal); padding:16px 0; list-style:none; }
+    details.q summary::-webkit-details-marker { display:none; }
+    details.q summary::after { content:"+"; float:right; color:var(--gold); font-size:1.3rem; line-height:1; }
+    details.q[open] summary::after { content:"–"; }
+    details.q .a { padding:0 0 16px; color:var(--muted); }
+    .deftable { width:100%; border-collapse:collapse; margin:10px 0; }
+    .deftable td { border-bottom:1px solid var(--line); padding:11px 8px; vertical-align:top; font-size:.95rem; }
+    .deftable td:first-child { font-weight:700; color:var(--red); width:190px; white-space:nowrap; }
+    .backlink { text-align:center; margin-top:30px; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="wrap">
+      <span class="tag">Midland Studio · Learning Library</span>
+      <span>Call or text: <a href="tel:+19548702204">(954) 870-2204</a></span>
+    </div>
+  </div>
+
+  <header class="nav">
+    <div class="wrap">
+      <a class="brand" href="index.html"><span class="mark">M</span> Midland <b>Studio</b></a>
+      <ul class="menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#services">Web Design</a></li>
+        <li><a href="seo.html">SEO</a></li>
+        <li><a href="seo-guide.html">SEO Guide</a></li>
+        <li><a href="ai-services.html">AI Solutions</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+      </ul>
+      <a href="index.html#contact" class="btn btn-primary">Get Started</a>
+      <button class="menu-toggle" onclick="document.querySelector('.menu').style.display='flex'">☰</button>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="wrap">
+      <span class="eyebrow" style="color:var(--gold)">The Complete Guide</span>
+      <h1>SEO, explained <span>start to finish</span></h1>
+      <p>Everything that makes a website rank on Google, in plain English. Read it top to bottom to learn the whole picture, or jump to a section. Built as a working reference for real local businesses.</p>
+    </div>
+  </section>
+
+  <!-- TABLE OF CONTENTS -->
+  <section class="section">
+    <div class="wrap" style="max-width:900px">
+      <div class="toc">
+        <h4>What's inside</h4>
+        <ol>
+          <li><a href="#what">What SEO is &amp; how search works</a></li>
+          <li><a href="#ranking">How Google decides rankings</a></li>
+          <li><a href="#keywords">Keyword research &amp; search intent</a></li>
+          <li><a href="#onpage">On-page SEO</a></li>
+          <li><a href="#technical">Technical SEO</a></li>
+          <li><a href="#content">Content strategy</a></li>
+          <li><a href="#local">Local SEO (the big one)</a></li>
+          <li><a href="#links">Off-page SEO &amp; links</a></li>
+          <li><a href="#measure">Measuring results</a></li>
+          <li><a href="#avoid">Mistakes &amp; black-hat to avoid</a></li>
+          <li><a href="#playbook">The local business playbook</a></li>
+          <li><a href="#glossary">Glossary of terms</a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. WHAT SEO IS -->
+  <section class="section section--soft" id="what">
+    <div class="wrap center">
+      <span class="eyebrow">Foundations</span>
+      <h2>What SEO is, and how search actually works</h2>
+      <p class="lead">SEO stands for Search Engine Optimization: the practice of making a website more likely to show up, and rank higher, when people search for what you offer.</p>
+    </div>
+    <div class="wrap prose">
+      <p>Search is the front door to most businesses today. When someone types "lawn care near me" or "junk removal Harrisonburg," Google returns a ranked list. Studies consistently show the top few results get the large majority of clicks, and page two barely gets seen. SEO is how you earn those top spots without paying for ads.</p>
+      <p>To rank a site, Google does three things, in order:</p>
+      <ol>
+        <li><b>Crawl.</b> Google's bots (called Googlebot) follow links around the web and discover pages. If a page can't be reached by a link or a sitemap, it may never be found.</li>
+        <li><b>Index.</b> Google reads each page it crawls and stores it in a giant database (the index), noting what the page is about. A page that isn't indexed cannot rank at all.</li>
+        <li><b>Rank.</b> When someone searches, Google pulls the most relevant indexed pages and orders them using hundreds of signals. That ordering is what SEO influences.</li>
+      </ol>
+      <div class="callout"><b>The mental model:</b> SEO is not about tricking Google. It is about clearly proving to Google (and to a real human) that your page is the most relevant, trustworthy, and useful answer to a specific search. Everything below is a way to make that proof stronger.</div>
+      <p>There are two families of results on a search page. <b>Organic results</b> are the free, ranked listings SEO earns. <b>Paid results</b> (Google Ads) sit above them and cost money per click. There is also the <b>local pack</b>, the map with three business listings, which is its own game covered in the Local SEO section.</p>
+    </div>
+  </section>
+
+  <!-- 2. HOW GOOGLE RANKS -->
+  <section class="section" id="ranking">
+    <div class="wrap center">
+      <span class="eyebrow">The Algorithm</span>
+      <h2>How Google decides who ranks</h2>
+      <p class="lead">Google uses hundreds of signals, but they group into three big questions.</p>
+    </div>
+    <div class="wrap grid grid-3">
+      <div class="card"><div class="ico">🎯</div><h3>Relevance</h3><p>Does this page match what the searcher wants? Google reads your words, headings, and topics to judge whether you actually answer the query, and the intent behind it.</p></div>
+      <div class="card"><div class="ico">🏆</div><h3>Authority</h3><p>Is this source trustworthy and respected? Measured largely by backlinks (other sites linking to you) and your overall reputation. Links act like votes of confidence.</p></div>
+      <div class="card"><div class="ico">⚡</div><h3>Experience</h3><p>Is the page fast, mobile-friendly, secure, and easy to use? A great answer on a slow, broken, or shady page still loses.</p></div>
+    </div>
+    <div class="wrap prose">
+      <h3>E-E-A-T: how Google judges quality</h3>
+      <p>Google's human-rater guidelines lean on a concept called <b>E-E-A-T</b>: Experience, Expertise, Authoritativeness, and Trustworthiness. It is not a direct score, but it describes what "high quality" means. For a local service business, you build E-E-A-T with real photos of your work, clear service and location info, genuine reviews, an about section with real people, and accurate contact details.</p>
+      <div class="callout"><b>Reality check:</b> No one factor wins on its own. Great content on a slow site loses. A fast site with thin content loses. Rankings come from doing many things reasonably well and a few things very well, then staying consistent over time. SEO is a compounding, months-long effort, not a switch you flip.</div>
+    </div>
+  </section>
+
+  <!-- 3. KEYWORDS -->
+  <section class="section section--soft" id="keywords">
+    <div class="wrap center">
+      <span class="eyebrow">Keywords</span>
+      <h2>Keyword research &amp; search intent</h2>
+      <p class="lead">Keywords are the actual words people type into Google. Everything in SEO starts with knowing which ones matter to your customers.</p>
+    </div>
+    <div class="wrap prose">
+      <h3>Search intent: the most important idea in keywords</h3>
+      <p>Every search has a reason behind it. Match the reason and you rank; ignore it and you don't. There are four intents:</p>
+      <ul>
+        <li><b>Informational</b> — learning something. "how often should I mow my lawn." Answered by blog posts and guides.</li>
+        <li><b>Navigational</b> — finding a specific site or brand. "Norwoods Home and Lawn."</li>
+        <li><b>Commercial</b> — researching before buying. "best lawn care company Charlottesville." Answered by comparison and service pages.</li>
+        <li><b>Transactional</b> — ready to act. "lawn mowing service near me," "lawn care quote Culpeper." These turn into calls and are gold for a service business.</li>
+      </ul>
+      <h3>Head terms vs long-tail</h3>
+      <p><b>Head terms</b> are short and broad ("lawn care"), high volume, and brutally competitive. <b>Long-tail</b> keywords are longer and specific ("weekly lawn mowing service in Gordonsville VA"), lower volume, but far easier to rank for and much more likely to convert because the searcher knows exactly what they want. Local businesses win with long-tail and local terms.</p>
+      <h3>Local modifiers</h3>
+      <p>Adding a place or "near me" turns a generic term into a local one: <code>lawn care</code> becomes <code>lawn care Orange VA</code>. These "service + city" combinations are the backbone of local SEO and the single most valuable keyword type for a company like a lawn service.</p>
+      <div class="callout"><b>How to find keywords (free):</b> Type your service into Google and read the autocomplete suggestions. Scroll to "People also ask" and "Related searches" at the bottom. Look at what competitors put in their page titles and headings. Free tools like Google Search Console (once your site is live) show the exact terms you already appear for. Paid tools (Ahrefs, SEMrush, Google Keyword Planner) add search volume numbers.</div>
+    </div>
+  </section>
+
+  <!-- 4. ON-PAGE -->
+  <section class="section" id="onpage">
+    <div class="wrap center">
+      <span class="eyebrow">On-Page SEO</span>
+      <h2>On-page SEO: optimizing the page itself</h2>
+      <p class="lead">On-page SEO is everything you control inside a page's HTML and content. It is the highest-leverage work you can do, and it is fully in your hands.</p>
+    </div>
+    <div class="wrap prose">
+      <h3>Title tag</h3>
+      <p>The clickable blue headline in search results, set in the HTML <code>&lt;title&gt;</code>. It is one of the strongest on-page signals. Keep it about 50 to 60 characters, put the main keyword near the front, and include your location and brand.</p>
+      <div class="example"><span class="g">Good:</span> Lawn Care &amp; Mowing in Charlottesville, VA | Norwoods Home &amp; Lawn<br><span class="r">Weak:</span> Home | Welcome to Our Website</div>
+      <h3>Meta description</h3>
+      <p>The gray summary under the title. It does not directly change rankings, but a compelling one earns more clicks, and click-through rate matters. Keep it around 150 to 160 characters, describe the value, and include a reason to click plus your phone or "free estimate."</p>
+      <h3>Headings (H1, H2, H3)</h3>
+      <p>Headings structure the page for readers and for Google. Use exactly one <code>&lt;h1&gt;</code> per page (the main topic), then <code>&lt;h2&gt;</code> for major sections and <code>&lt;h3&gt;</code> for sub-points. Work keywords in naturally where they fit.</p>
+      <h3>URL slugs</h3>
+      <p>Short, readable, keyword-bearing URLs beat random ones. <code>/lawn-care-culpeper</code> beats <code>/page?id=42</code>. Use hyphens between words, lowercase, no filler.</p>
+      <h3>Body content</h3>
+      <p>Write genuinely useful content that fully answers the search. Use the keyword and its natural variations, but write for humans first. Cover the topic thoroughly; depth and clarity beat word-count padding.</p>
+      <h3>Internal links</h3>
+      <p>Link between your own pages using descriptive anchor text ("see our <a href="#local">snow removal service</a>"). This helps Google understand your site structure and spreads ranking strength around.</p>
+      <h3>Image alt text</h3>
+      <p>Every meaningful image needs an <code>alt</code> attribute describing it. It helps accessibility, helps image search, and adds relevant context. Describe the image honestly and include a keyword only where it truly fits.</p>
+      <div class="callout red"><b>Do not keyword-stuff.</b> Cramming "lawn care Charlottesville lawn care VA lawn care near me" into every sentence reads as spam to humans and to Google, and it can get you penalized. Use a keyword where it naturally belongs, and stop.</div>
+
+      <h4 style="margin-top:30px">On-page checklist for one page</h4>
+      <ul class="check">
+        <li>One clear primary keyword the page targets</li>
+        <li>Title tag ~55 chars with keyword near the front + location</li>
+        <li>Meta description ~155 chars that earns the click</li>
+        <li>Single H1 stating the topic; H2/H3 for structure</li>
+        <li>Short, readable, keyword-bearing URL</li>
+        <li>Thorough content that matches the search intent</li>
+        <li>Descriptive alt text on every meaningful image</li>
+        <li>Internal links to and from related pages</li>
+        <li>A clear call to action (call, quote, book)</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 5. TECHNICAL -->
+  <section class="section section--dark" id="technical">
+    <div class="wrap center">
+      <span class="eyebrow" style="color:var(--gold)">Technical SEO</span>
+      <h2>Technical SEO: the foundation under the hood</h2>
+      <p class="lead">If Google can't crawl, read, and load your site easily, nothing else matters. Technical SEO clears the path.</p>
+    </div>
+    <div class="wrap steps">
+      <div class="step"><h3>Crawlability</h3><p>Make sure important pages are reachable by links and listed in an XML sitemap. A robots.txt file tells bots what to skip. A stray "noindex" tag can hide a page by accident.</p></div>
+      <div class="step"><h3>Mobile-first</h3><p>Google ranks based on the mobile version of your site. It must be fully responsive and usable on a phone, since that is how most local searches happen.</p></div>
+      <div class="step"><h3>Speed</h3><p>Fast pages rank and convert better. Compress images, keep code lean, and avoid heavy scripts. Measure with Google PageSpeed Insights.</p></div>
+      <div class="step"><h3>Security</h3><p>Your site must use HTTPS (the padlock). It is a confirmed ranking signal and a trust basic. Free with modern hosting.</p></div>
+    </div>
+    <div class="wrap prose" style="margin-top:30px">
+      <h3 style="color:#fff">Core Web Vitals</h3>
+      <p style="color:#cfcfcf">Google measures real-world page experience with three metrics. Aim for the "good" thresholds:</p>
+      <ul style="color:#cfcfcf">
+        <li><b style="color:#fff">LCP (Largest Contentful Paint)</b> — how fast the main content loads. Good: under 2.5 seconds.</li>
+        <li><b style="color:#fff">INP (Interaction to Next Paint)</b> — how quickly the page responds to taps and clicks. Good: under 200 milliseconds.</li>
+        <li><b style="color:#fff">CLS (Cumulative Layout Shift)</b> — how much the layout jumps around while loading. Good: under 0.1.</li>
+      </ul>
+      <h3 style="color:#fff">Structured data (schema)</h3>
+      <p style="color:#cfcfcf">Schema is extra code (usually JSON-LD) that spells out facts for Google in a format it trusts: your business name, address, phone, hours, services, and reviews. For a local business, <code>LocalBusiness</code> schema helps Google show rich details and understand exactly who and where you are. It is one of the most underused local SEO wins.</p>
+      <div class="callout"><b>Other technical basics:</b> a canonical tag tells Google the "main" version of a page to avoid duplicate-content confusion; an XML sitemap submitted in Google Search Console speeds up discovery; and clean, logical site structure (few clicks from the home page to any page) helps both crawlers and humans.</div>
+    </div>
+  </section>
+
+  <!-- 6. CONTENT -->
+  <section class="section" id="content">
+    <div class="wrap center">
+      <span class="eyebrow">Content</span>
+      <h2>Content strategy: the thing that actually ranks</h2>
+      <p class="lead">Keywords and code get you in the game. Content is what Google ranks. Every page is a chance to answer a search.</p>
+    </div>
+    <div class="wrap prose">
+      <p>Google's "helpful content" approach rewards pages made for people, not for algorithms. The winning formula is simple to say and hard to fake: create the most genuinely useful page for a specific search.</p>
+      <h3>The page types every local site needs</h3>
+      <ul>
+        <li><b>Service pages</b> — one focused page per core service (lawn mowing, leaf removal, snow removal). Each targets that service's keyword and explains it fully.</li>
+        <li><b>Location pages</b> — a page per major service area ("Lawn Care in Culpeper, VA") when you serve several towns. This is how you rank for "service + city" across your whole area without stuffing every city onto one page.</li>
+        <li><b>Blog / guides</b> — informational content ("when to aerate a lawn in Virginia") that pulls in top-of-funnel searchers, builds authority, and earns links.</li>
+        <li><b>Home and about</b> — your brand story, trust signals, and a clear path to contact you.</li>
+      </ul>
+      <div class="callout"><b>Match the intent, every time.</b> If the search is "how to get rid of leaves," the winner is a helpful guide, not a sales page. If the search is "leaf removal service near me," the winner is a service page with a quote button. Always ask: what does this searcher actually want, and does my page deliver it better than the current top result?</div>
+      <p><b>Freshness</b> helps for topics that change, and simply keeping pages accurate and updated signals an active, trustworthy site.</p>
+    </div>
+  </section>
+
+  <!-- 7. LOCAL SEO -->
+  <section class="section section--soft" id="local">
+    <div class="wrap center">
+      <span class="eyebrow">Local SEO</span>
+      <h2>Local SEO: how service businesses win</h2>
+      <p class="lead">For a business that serves an area, this is the single most important chapter. Most local leads come from the map pack and "near me" searches, not the plain blue links.</p>
+    </div>
+    <div class="wrap prose">
+      <h3>Google Business Profile (GBP)</h3>
+      <p>This is your free business listing that powers Google Maps and the local pack (the three businesses shown with a map). It is often more important than the website itself for local leads. Claim and fully complete it: correct name, address or service area, phone, hours, website, categories, services, and lots of real photos. Post updates and keep it active. <b>A great GBP with strong reviews can outrank a bigger competitor's website.</b></p>
+      <h3>NAP consistency</h3>
+      <p>NAP means Name, Address, Phone. These must be <b>identical</b> everywhere they appear online: your site, GBP, Facebook, and directories. Mismatches (different phone formats, old addresses) confuse Google and weaken local rankings.</p>
+      <h3>Citations &amp; directories</h3>
+      <p>Citations are mentions of your NAP on other sites: Yelp, Angi, Nextdoor, the Better Business Bureau, chamber of commerce, and industry directories. Consistent citations build local trust and authority.</p>
+      <h3>Reviews</h3>
+      <p>Reviews are rocket fuel for local SEO and for conversion. Volume, recency, rating, and your responses all matter. Ask every happy customer for a Google review, make it easy with a direct link, and reply to all of them. This is one of the highest-return activities a local business has.</p>
+      <h3>Local keywords &amp; service-area pages</h3>
+      <p>Target "service + city" terms across your footprint with dedicated location pages, and name your towns naturally throughout your content, titles, and schema. Google needs to clearly understand <b>what</b> you do and <b>where</b> you do it.</p>
+      <div class="callout red"><b>The local SEO priority order:</b> 1) Google Business Profile, 2) reviews, 3) NAP consistency + citations, 4) on-page local signals (titles, location pages, schema), 5) local backlinks. Do them in that order for the fastest local wins.</div>
+    </div>
+  </section>
+
+  <!-- 8. OFF-PAGE / LINKS -->
+  <section class="section" id="links">
+    <div class="wrap center">
+      <span class="eyebrow">Off-Page SEO</span>
+      <h2>Backlinks &amp; authority</h2>
+      <p class="lead">Off-page SEO is everything that happens on other websites. Its centerpiece is backlinks.</p>
+    </div>
+    <div class="wrap prose">
+      <p>A <b>backlink</b> is a link from another website to yours. Google treats each one like a vote: if reputable sites link to you, you must be worth trusting. Links from relevant, high-authority sites are worth far more than many links from junk sites. <b>Quality beats quantity, every time.</b></p>
+      <h3>How to earn links honestly (white-hat)</h3>
+      <ul>
+        <li>Get listed in legitimate local and industry directories</li>
+        <li>Join the local chamber of commerce and business associations</li>
+        <li>Sponsor a local team, event, or charity that links back</li>
+        <li>Earn press or partner mentions from local sites</li>
+        <li>Create genuinely useful content that people want to reference</li>
+      </ul>
+      <div class="callout red"><b>Never buy links or use link schemes.</b> Paid link networks, spammy mass-directory blasts, and "1,000 backlinks for $20" services are black-hat and can get your site penalized or removed from Google. Slow, legitimate links win.</div>
+    </div>
+  </section>
+
+  <!-- 9. MEASURE -->
+  <section class="section section--dark" id="measure">
+    <div class="wrap center">
+      <span class="eyebrow" style="color:var(--gold)">Measurement</span>
+      <h2>Measuring what works</h2>
+      <p class="lead">You cannot improve what you don't measure. Two free Google tools tell you almost everything.</p>
+    </div>
+    <div class="wrap grid grid-2">
+      <div class="card"><div class="ico">🔎</div><h3>Google Search Console</h3><p>The SEO command center. Shows the exact search terms you appear for, your average position, impressions, clicks, and click-through rate, plus indexing and technical issues. Free, and essential. Set it up the day the site goes live.</p></div>
+      <div class="card"><div class="ico">📊</div><h3>Google Analytics (GA4)</h3><p>Shows what people do once they arrive: which pages they visit, how long they stay, and whether they convert (call, submit a form, request a quote). Tells you if your traffic is turning into business.</p></div>
+    </div>
+    <div class="wrap prose" style="margin-top:26px">
+      <h3 style="color:#fff">The metrics that matter</h3>
+      <ul style="color:#cfcfcf">
+        <li><b style="color:#fff">Impressions</b> — how often you showed up in search.</li>
+        <li><b style="color:#fff">Clicks &amp; CTR</b> — how often people chose you (better titles and descriptions lift this).</li>
+        <li><b style="color:#fff">Average position</b> — where you rank for your terms, tracked over time.</li>
+        <li><b style="color:#fff">Conversions</b> — the only number that pays the bills: calls, form fills, quote requests, bookings.</li>
+      </ul>
+      <div class="callout"><b>Set expectations:</b> SEO is a months-long compounding effort. A new or newly optimized site typically takes weeks to get indexed and several months to climb for competitive terms. Local and long-tail terms move faster; head terms take longer.</div>
+    </div>
+  </section>
+
+  <!-- 10. AVOID -->
+  <section class="section" id="avoid">
+    <div class="wrap center">
+      <span class="eyebrow">Stay Safe</span>
+      <h2>Mistakes &amp; black-hat to avoid</h2>
+      <p class="lead">Shortcuts that used to work now get sites penalized. Avoid these entirely.</p>
+    </div>
+    <div class="wrap prose">
+      <ul>
+        <li><b>Keyword stuffing</b> — unnatural repetition of keywords. Reads as spam.</li>
+        <li><b>Buying links / link schemes</b> — the fastest way to a manual penalty.</li>
+        <li><b>Thin or duplicate content</b> — near-empty pages or the same text copied across many pages.</li>
+        <li><b>Cloaking</b> — showing Google one thing and users another. A serious violation.</li>
+        <li><b>Hidden text</b> — white-on-white keywords or off-screen text to game rankings.</li>
+        <li><b>Ignoring mobile or speed</b> — a slow, clunky phone experience quietly caps your rankings.</li>
+        <li><b>Fake reviews</b> — against Google policy and a trust killer if caught.</li>
+        <li><b>Set-and-forget</b> — SEO decays without upkeep as competitors improve and Google updates.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 11. PLAYBOOK -->
+  <section class="section section--soft" id="playbook">
+    <div class="wrap center">
+      <span class="eyebrow">Put It Together</span>
+      <h2>The local business SEO playbook</h2>
+      <p class="lead">The whole guide, boiled down to an ordered game plan for a local service business.</p>
+    </div>
+    <div class="wrap prose">
+      <ol>
+        <li><b>Get the site live, fast, secure, and mobile-friendly.</b> Nothing ranks until it is hosted, indexed, and technically sound.</li>
+        <li><b>Claim and fully build the Google Business Profile.</b> Categories, services, service area, hours, photos.</li>
+        <li><b>Nail on-page basics</b> on every page: title, meta, one H1, clean URL, useful content, alt text, a call to action.</li>
+        <li><b>Build service pages and location pages</b> targeting "service + city" across your area.</li>
+        <li><b>Add LocalBusiness schema</b> with your NAP, hours, and services.</li>
+        <li><b>Get NAP consistent</b> everywhere and build citations in trusted directories.</li>
+        <li><b>Run a review engine:</b> ask every happy customer, make it one click, respond to all.</li>
+        <li><b>Earn a few quality local links</b> (chamber, sponsorships, partners).</li>
+        <li><b>Install Search Console + GA4</b> and check monthly. Double down on what climbs.</li>
+        <li><b>Keep going.</b> Add content, refresh pages, gather reviews. Consistency compounds.</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 12. GLOSSARY -->
+  <section class="section" id="glossary">
+    <div class="wrap center">
+      <span class="eyebrow">Reference</span>
+      <h2>Glossary of key terms</h2>
+    </div>
+    <div class="wrap" style="max-width:860px">
+      <table class="deftable">
+        <tr><td>SERP</td><td>Search Engine Results Page. The page of results Google returns for a query.</td></tr>
+        <tr><td>Organic</td><td>The free, ranked search listings (as opposed to paid ads).</td></tr>
+        <tr><td>Local pack</td><td>The map with three business listings shown for local searches.</td></tr>
+        <tr><td>Crawl / index</td><td>Google discovering pages (crawl) and storing them to rank (index).</td></tr>
+        <tr><td>Keyword</td><td>A word or phrase people type into search.</td></tr>
+        <tr><td>Long-tail</td><td>A longer, specific, lower-competition keyword that converts well.</td></tr>
+        <tr><td>Search intent</td><td>The reason behind a search: informational, navigational, commercial, or transactional.</td></tr>
+        <tr><td>Title tag</td><td>The clickable headline of a result, set in the HTML title element.</td></tr>
+        <tr><td>Meta description</td><td>The summary snippet under the title; influences clicks.</td></tr>
+        <tr><td>Backlink</td><td>A link from another website to yours; a trust signal.</td></tr>
+        <tr><td>Anchor text</td><td>The visible, clickable words of a link.</td></tr>
+        <tr><td>GBP</td><td>Google Business Profile, the free listing behind Maps and the local pack.</td></tr>
+        <tr><td>NAP</td><td>Name, Address, Phone, kept identical everywhere online.</td></tr>
+        <tr><td>Citation</td><td>A mention of your NAP on another site or directory.</td></tr>
+        <tr><td>Schema</td><td>Structured-data code that states facts about your business for Google.</td></tr>
+        <tr><td>E-E-A-T</td><td>Experience, Expertise, Authoritativeness, Trustworthiness: Google's quality lens.</td></tr>
+        <tr><td>Core Web Vitals</td><td>Google's page-experience metrics: LCP, INP, CLS.</td></tr>
+        <tr><td>CTR</td><td>Click-Through Rate: clicks divided by impressions.</td></tr>
+        <tr><td>White-hat / black-hat</td><td>Legitimate SEO vs rule-breaking tactics that risk penalties.</td></tr>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section--soft">
+    <div class="wrap center">
+      <span class="eyebrow">Common Questions</span>
+      <h2>Quick answers</h2>
+    </div>
+    <div class="wrap" style="max-width:820px">
+      <details class="q"><summary>How long does SEO take to work?</summary><div class="a">Usually a few weeks to get indexed and several months to climb for competitive terms. Local and long-tail terms move faster. It compounds, so results build over time.</div></details>
+      <details class="q"><summary>Is SEO better than Google Ads?</summary><div class="a">They do different jobs. Ads are instant but stop the moment you stop paying. SEO takes time but keeps working and compounds. Many local businesses run ads for speed while SEO builds.</div></details>
+      <details class="q"><summary>What is the single most important thing for a local business?</summary><div class="a">A fully built, active Google Business Profile with a steady stream of real reviews. It drives the map pack, which is where most local leads come from.</div></details>
+      <details class="q"><summary>Do I need to blog?</summary><div class="a">Not required, but helpful. Blogs capture informational searches, build authority, and earn links. For most local businesses, great service and location pages come first; the blog is a bonus.</div></details>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band">
+        <h2>That's the whole map</h2>
+        <p>Foundations, keywords, on-page, technical, content, local, links, and measurement. Next we put it to work: analyze the competition, build a checklist, and apply it.</p>
+        <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap">
+          <a href="seo.html" class="btn btn-primary">Our SEO Services</a>
+          <a href="index.html#contact" class="btn btn-gold">Get a Free Audit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <div class="wrap foot-grid">
+      <div>
+        <div class="brand"><span class="mark">M</span> Midland <b>Studio</b></div>
+        <p class="foot-about">A Central Virginia web design company helping small businesses grow online with custom websites, SEO, and AI solutions. Serving Richmond, Charlottesville, and everywhere between.</p>
+      </div>
+      <div><h4>Services</h4><a href="index.html#services">Web Design</a><a href="seo.html">SEO</a><a href="seo-guide.html">SEO Guide</a><a href="pricing.html">Pricing</a></div>
+      <div><h4>Company</h4><a href="index.html">Home</a><a href="index.html#contact">Contact</a><a href="index.html#work">Portfolio</a></div>
+      <div><h4>Get in Touch</h4><a href="tel:+19548702204">(954) 870-2204</a><a href="sms:+19548702204">Text us anytime</a><a href="mailto:hello@localvirginiawebsites.com">hello@localvirginiawebsites.com</a></div>
+    </div>
+    <div class="wrap foot-bottom"><span>© 2026 Midland Studio. All rights reserved.</span><span>Richmond • Charlottesville • Central Virginia</span></div>
+  </footer>
+
+</body>
+</html>

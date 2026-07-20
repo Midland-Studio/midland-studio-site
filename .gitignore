@@ -1,0 +1,15 @@
+# OS / editor junk
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.swp
+*~
+
+# Local server / tooling artifacts
+.cache/
+node_modules/
+
+# Accidental temp files
+*.tmp
+*.log
+${base}*

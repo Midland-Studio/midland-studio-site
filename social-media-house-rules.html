@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Social Media Management — How We Work Together</title>
+<style>
+  /* Onboarding house-rules sheet. Same brand system as the pricing infographics.
+     1080x1350 canvas; prints to a single US Letter page via zoom. */
+  :root{
+    --red:#c8102e; --red-dark:#9c0c23; --gold:#c9a227; --gold-soft:#e7d9a3;
+    --charcoal:#1a1a1a; --ink:#2b2b2b; --muted:#6f6f6f; --line:#ececec; --bg-soft:#faf8f5;
+    --font:"Segoe UI",system-ui,-apple-system,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{background:#e9e9e9;font-family:var(--font);display:flex;justify-content:center;padding:24px}
+
+  .poster{width:1080px;height:1350px;background:#fff;position:relative;overflow:hidden;
+    display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.18)}
+
+  /* Header */
+  .head{background:var(--charcoal);padding:30px 54px;display:flex;align-items:center;justify-content:space-between;position:relative}
+  .head::after{content:"";position:absolute;left:0;right:0;bottom:0;height:4px;
+    background:linear-gradient(90deg,var(--red) 0%,var(--red) 55%,var(--gold) 55%,var(--gold) 100%)}
+  .logo{display:flex;align-items:center;gap:14px}
+  .mark{width:52px;height:52px;border-radius:13px;background:linear-gradient(135deg,var(--red),var(--red-dark));
+    display:grid;place-items:center;color:#fff;font-weight:800;font-size:1.6rem;box-shadow:inset 0 0 0 2px var(--gold)}
+  .logo-txt{color:#fff;font-weight:800;font-size:1.5rem;letter-spacing:-.02em;line-height:1.15}
+  .logo-txt b{color:var(--gold);font-weight:800}
+  .head-right{text-align:right;color:#b9b9b9;font-size:.86rem;line-height:1.5;font-weight:600}
+  .head-right span{color:var(--gold)}
+
+  /* Title */
+  .title{text-align:center;padding:36px 54px 20px}
+  .eyebrow{display:inline-block;font-size:.8rem;font-weight:800;letter-spacing:.22em;color:var(--red);text-transform:uppercase}
+  .eyebrow::after{content:"";display:block;width:52px;height:3px;background:var(--gold);margin:11px auto 0;border-radius:2px}
+  .title h1{font-size:2.9rem;font-weight:800;color:var(--charcoal);letter-spacing:-.025em;margin:18px 0 12px;line-height:1.08}
+  .title h1 em{color:var(--red);font-style:normal}
+  .title p{color:var(--muted);font-size:1.1rem;max-width:720px;margin:0 auto;line-height:1.5}
+
+  /* Rules */
+  .rules{flex:1;display:flex;flex-direction:column;justify-content:center;gap:22px;padding:8px 58px}
+  .rcard{background:#fff;border:1px solid var(--line);border-left:5px solid var(--red);border-radius:14px;
+    padding:22px 28px;box-shadow:0 4px 14px rgba(0,0,0,.04);display:flex;gap:22px;align-items:flex-start}
+  .rcard.flag{border-left-color:var(--gold);background:var(--bg-soft)}
+  .rnum{flex:none;width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--red),var(--red-dark));
+    color:#fff;font-weight:800;font-size:1.45rem;display:grid;place-items:center;box-shadow:inset 0 0 0 2px var(--gold)}
+  .rcard.flag .rnum{background:linear-gradient(135deg,var(--gold),#a8851d)}
+  .rbody{flex:1}
+  .rbody h3{font-size:1.32rem;font-weight:800;color:var(--charcoal);margin-bottom:7px;letter-spacing:-.01em;
+    display:flex;align-items:center;gap:10px}
+  .rbody h3 .pill{font-size:.6rem;font-weight:800;letter-spacing:.12em;color:#fff;background:var(--red);
+    padding:4px 10px;border-radius:999px;text-transform:uppercase}
+  .rbody p{color:var(--ink);font-size:1.04rem;line-height:1.52}
+  .rbody .em{color:var(--red);font-weight:700}
+  .rcard.flag .em{color:#8a6d16}
+
+  /* Footer */
+  .foot{background:var(--charcoal);margin-top:22px;padding:22px 54px;display:flex;justify-content:space-between;align-items:center;position:relative}
+  .foot::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;
+    background:linear-gradient(90deg,var(--gold) 0%,var(--gold) 45%,var(--red) 45%,var(--red) 100%)}
+  .foot .site{color:#fff;font-weight:800;font-size:1.18rem;letter-spacing:-.01em}
+  .foot .site span{color:var(--gold)}
+  .foot .contact{text-align:right;color:#b0b0b0;font-size:.85rem;font-weight:600;line-height:1.5}
+  .foot .contact b{color:#fff;font-size:1.05rem;display:block}
+
+  @page{size:letter portrait;margin:0}
+  @media print{
+    body{background:#fff;padding:0;display:block}
+    .poster{box-shadow:none;zoom:.7556}
+    .rcard,.foot,.head{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<div class="poster">
+
+  <!-- Header -->
+  <div class="head">
+    <div class="logo">
+      <div class="mark">M</div>
+      <div class="logo-txt">Midland<br><b>Studio</b></div>
+    </div>
+    <div class="head-right">
+      Social Media Management<br>
+      <span>Client Onboarding</span>
+    </div>
+  </div>
+
+  <!-- Title -->
+  <div class="title">
+    <span class="eyebrow">How We Work Together</span>
+    <h1>A Few <em>House Rules</em></h1>
+    <p>These keep your content on time, on brand, and stress-free. They spell out exactly who handles what, so nothing gets missed.</p>
+  </div>
+
+  <!-- Rules -->
+  <div class="rules">
+
+    <div class="rcard">
+      <div class="rnum">1</div>
+      <div class="rbody">
+        <h3>Assets &amp; Deadlines</h3>
+        <p>All photos, videos, and brand assets must be uploaded to your designated Google Drive folder by <span class="em">the 20th of the month before</span> posting. We can't build or schedule posts without them — if assets arrive late, your posts for the upcoming month may be delayed or missed.</p>
+      </div>
+    </div>
+
+    <div class="rcard">
+      <div class="rnum">2</div>
+      <div class="rbody">
+        <h3>Content Approval</h3>
+        <p>Once your monthly content calendar is ready, you'll have <span class="em">3 business days</span> to review and request edits. If we don't hear back within 3 business days, posts are scheduled as-is so we never miss your posting window.</p>
+      </div>
+    </div>
+
+    <div class="rcard flag">
+      <div class="rnum">3</div>
+      <div class="rbody">
+        <h3>Community Management <span class="pill" style="background:var(--gold)">Please Note</span></h3>
+        <p>These packages cover content creation and scheduling. They <span class="em">do not</span> include replying to comments, DMs, or customer-service inquiries — you remain the direct voice of your community. Want us to handle it? Ask about our community-management add-on.</p>
+      </div>
+    </div>
+
+    <div class="rcard">
+      <div class="rnum">4</div>
+      <div class="rbody">
+        <h3>Billing &amp; Cancellation</h3>
+        <p>Services are billed <span class="em">monthly, in advance</span>. We ask for <span class="em">30 days' written notice</span> to cancel or pause, so we can wrap up any scheduled queues cleanly.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <div class="foot">
+    <div class="site">LocalVirginia<span>Websites</span>.com</div>
+    <div class="contact">
+      <b>(954) 870-2204</b>
+      Questions? Call or text anytime
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
