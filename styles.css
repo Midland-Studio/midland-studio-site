@@ -389,11 +389,12 @@ footer .brand b { color: var(--gold); }
   text-shadow:0 2px 12px rgba(0,0,0,.6); transition:transform .35s ease; }
 .svc-card:hover .svc-title { transform:translateY(-6px); opacity:0; }
 
-/* hover reveal: frosted description panel */
-.svc-desc { position:absolute; inset:0; z-index:3; display:flex; align-items:flex-end; padding:26px 24px;
+/* hover reveal: frosted panel behind ONLY the description (bottom-anchored); photo stays clear above */
+.svc-desc { position:absolute; left:0; right:0; bottom:0; z-index:3; padding:22px 22px 20px;
   opacity:0; transition:opacity .35s ease;
-  background:rgba(10,10,10,.40); backdrop-filter:blur(11px) saturate(125%);
-  -webkit-backdrop-filter:blur(11px) saturate(125%); }
+  background:linear-gradient(transparent, rgba(10,10,10,.55) 22%);
+  backdrop-filter:blur(12px) saturate(125%); -webkit-backdrop-filter:blur(12px) saturate(125%);
+  -webkit-mask:linear-gradient(transparent, #000 20%); mask:linear-gradient(transparent, #000 20%); }
 .svc-card:hover .svc-desc { opacity:1; }
 .svc-desc .k { display:block; color:var(--gold); font-size:.6rem; font-weight:800;
   text-transform:uppercase; letter-spacing:.12em; margin-bottom:9px; }
@@ -422,3 +423,4 @@ a.svc-card { text-decoration:none; color:inherit; }
 .svc-card.work .wk-t { display:block; color:#fff; font-size:1.2rem; font-weight:800; letter-spacing:-.01em;
   line-height:1.15; text-shadow:0 2px 10px rgba(0,0,0,.6); }
 @media (prefers-reduced-motion: reduce) { .svc-card.work .svc-media { transition:none; } }
+
