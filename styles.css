@@ -353,3 +353,54 @@ footer .brand b { color: var(--gold); }
   .wm-orbit { animation:none; }
   .wm-hub { display:none; }
 }
+
+/* ==========================================================================
+   What We Do — auto-scrolling marquee of tall photo-background service cards
+   ========================================================================== */
+.svc { background:#080808; color:#eee; position:relative; overflow:hidden; }
+.svc .eyebrow { color:var(--gold); }
+.svc .eyebrow::after { background:var(--red); }
+.svc h2 { color:#fff; }
+.svc h2 em { color:var(--red); font-style:normal; }
+.svc .lead { color:#b3b3b3; }
+
+.svc-marquee { margin-top:42px; overflow-x:auto; overflow-y:hidden; cursor:grab;
+  scrollbar-width:none; -ms-overflow-style:none; -webkit-overflow-scrolling:touch; }
+.svc-marquee::-webkit-scrollbar { display:none; }
+.svc-marquee.is-grabbing { cursor:grabbing; }
+.svc-track { display:flex; gap:22px; width:max-content; padding:8px 24px; }
+
+.svc-card { position:relative; flex:0 0 300px; height:444px; border-radius:18px; overflow:hidden;
+  background:#111; border:1px solid #262626; box-shadow:0 14px 40px rgba(0,0,0,.5);
+  transition:transform .35s ease, box-shadow .35s ease, border-color .35s ease; }
+.svc-card:hover { transform:translateY(-6px); border-color:var(--gold);
+  box-shadow:0 22px 54px rgba(201,162,39,.22); }
+.svc-media { position:absolute; inset:0; background-image:var(--bg);
+  background-size:cover; background-position:center; transition:transform .6s ease; }
+.svc-card:hover .svc-media { transform:scale(1.06); }
+.svc-media::after { content:""; position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.30) 45%, rgba(0,0,0,.86) 100%); }
+.svc-num { position:absolute; top:18px; left:20px; z-index:2; font-size:.85rem; font-weight:800;
+  color:var(--gold); letter-spacing:.14em; }
+.svc-ico { position:absolute; top:14px; right:18px; z-index:2; font-size:1.7rem;
+  filter:drop-shadow(0 2px 6px rgba(0,0,0,.6)); }
+.svc-title { position:absolute; left:22px; right:22px; bottom:22px; z-index:2; margin:0;
+  color:#fff; font-size:1.5rem; font-weight:800; letter-spacing:-.01em;
+  text-shadow:0 2px 12px rgba(0,0,0,.6); transition:transform .35s ease; }
+.svc-card:hover .svc-title { transform:translateY(-6px); opacity:0; }
+
+/* hover reveal: frosted description panel */
+.svc-desc { position:absolute; inset:0; z-index:3; display:flex; align-items:flex-end; padding:26px 24px;
+  opacity:0; transition:opacity .35s ease;
+  background:rgba(10,10,10,.40); backdrop-filter:blur(11px) saturate(125%);
+  -webkit-backdrop-filter:blur(11px) saturate(125%); }
+.svc-card:hover .svc-desc { opacity:1; }
+.svc-desc .k { display:block; color:var(--gold); font-size:.6rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.12em; margin-bottom:9px; }
+.svc-desc h3 { color:#fff; font-size:1.4rem; margin:0 0 10px; }
+.svc-desc p { color:#e2e2e2; font-size:.96rem; line-height:1.55; margin:0; }
+.svc-hint { text-align:center; color:#6f6f6f; font-size:.8rem; margin-top:20px; }
+.svc-hint span { color:var(--gold); }
+
+@media (max-width:600px) { .svc-card { flex-basis:262px; height:398px; } }
+@media (prefers-reduced-motion: reduce) { .svc-media, .svc-card { transition:none; } }
