@@ -408,3 +408,17 @@ footer .brand b { color: var(--gold); }
 /* service/work cards can be links */
 a.svc-card { text-decoration:none; color:inherit; }
 .svc-card img { -webkit-user-drag:none; user-select:none; }
+
+/* ==========================================================================
+   Our Work cards: slow scroll-through of the live landing page on hover
+   ========================================================================== */
+.svc-card.work .svc-media { transition: background-position 6s linear; }
+.svc-card.work:hover .svc-media { transform: none; background-position: center bottom; }
+.svc-card.work .svc-ico { font-size: 1.15rem; opacity:.9; }
+.svc-card.work .wk-cap { position:absolute; left:0; right:0; bottom:0; z-index:2; padding:22px 20px 18px;
+  background:linear-gradient(transparent, rgba(0,0,0,.92)); }
+.svc-card.work .wk-k { display:block; color:var(--gold); font-size:.6rem; font-weight:800;
+  text-transform:uppercase; letter-spacing:.1em; margin-bottom:4px; }
+.svc-card.work .wk-t { display:block; color:#fff; font-size:1.2rem; font-weight:800; letter-spacing:-.01em;
+  line-height:1.15; text-shadow:0 2px 10px rgba(0,0,0,.6); }
+@media (prefers-reduced-motion: reduce) { .svc-card.work .svc-media { transition:none; } }
