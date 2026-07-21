@@ -211,8 +211,20 @@
     var form = document.getElementById('requestForm');
     if (!form) return;
     var status = document.getElementById('requestStatus');
+    var emailEl = document.getElementById('rEmail');
+    var emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;  // requires name@domain.tld
+    // live-clear the custom error as they type
+    emailEl.addEventListener('input', function () { emailEl.setCustomValidity(''); });
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      // validate required fields + a real email address (name@domain.tld)
+      emailEl.setCustomValidity('');
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      if (!emailRe.test(emailEl.value.trim())) {
+        emailEl.setCustomValidity('Please enter a valid email address, like name@company.com.');
+        emailEl.reportValidity();
+        return;
+      }
       if ((form.access_key.value || '').indexOf('YOUR_') === 0) {
         status.style.color = '#c8102e';
         status.textContent = 'Form isn’t connected yet — email info@themidlandstudio.com.';
