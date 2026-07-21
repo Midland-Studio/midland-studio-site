@@ -376,7 +376,7 @@ footer .brand b { color: var(--gold); }
 .svc-card:hover { transform:translateY(-6px); border-color:var(--gold);
   box-shadow:0 22px 54px rgba(201,162,39,.22); }
 .svc-media { position:absolute; inset:0; background-image:var(--bg);
-  background-size:cover; background-position:center; transition:transform .6s ease; }
+  background-size:cover; background-position:var(--pos, center); transition:transform .6s ease; }
 .svc-card:hover .svc-media { transform:scale(1.06); }
 .svc-media::after { content:""; position:absolute; inset:0;
   background:linear-gradient(180deg, rgba(0,0,0,.10) 0%, rgba(0,0,0,.30) 45%, rgba(0,0,0,.86) 100%); }
@@ -404,3 +404,7 @@ footer .brand b { color: var(--gold); }
 
 @media (max-width:600px) { .svc-card { flex-basis:262px; height:398px; } }
 @media (prefers-reduced-motion: reduce) { .svc-media, .svc-card { transition:none; } }
+
+/* service/work cards can be links */
+a.svc-card { text-decoration:none; color:inherit; }
+.svc-card img { -webkit-user-drag:none; user-select:none; }
