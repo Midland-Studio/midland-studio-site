@@ -249,14 +249,17 @@
       m.querySelectorAll('a').forEach(function (a) { a.setAttribute('draggable', 'false'); });
       m.addEventListener('dragstart', function (e) { e.preventDefault(); }); // stop native link-drag so drag-to-scroll works
       var dir = parseFloat(m.getAttribute('data-dir') || '1');
-      var half = 0, auto = true, hover = false, down = false, sx = 0, sl = 0, moved = false;
-      function measure(){ half = track.scrollWidth / 2; if (dir < 0 && m.scrollLeft < 1) m.scrollLeft = half; }
-      measure(); window.addEventListener('resize', measure);
+      var half = track.scrollWidth / 2;
+      var pos = dir < 0 ? half : 0;            // keep our own float position; never read back the rounded scrollLeft
+      m.scrollLeft = pos;
+      window.addEventListener('resize', function(){ half = track.scrollWidth / 2; });
+      var auto = true, hover = false, down = false, sx = 0, sl = 0, moved = false;
       function tick(){
         if (auto && !reduce){
-          m.scrollLeft += dir * 0.5;
-          if (m.scrollLeft >= half) m.scrollLeft -= half;
-          else if (m.scrollLeft <= 0) m.scrollLeft += half;
+          pos += dir * 0.5;
+          if (pos >= half) pos -= half;
+          else if (pos < 0) pos += half;
+          m.scrollLeft = pos;
         }
         requestAnimationFrame(tick);
       }
@@ -264,8 +267,8 @@
       m.addEventListener('pointerenter', function(){ hover = true; auto = false; });
       m.addEventListener('pointerleave', function(){ hover = false; if (!down) auto = true; });
       m.addEventListener('pointerdown', function(e){ down = true; moved = false; auto = false; sx = e.clientX; sl = m.scrollLeft; m.classList.add('is-grabbing'); });
-      window.addEventListener('pointermove', function(e){ if (!down) return; var dx = e.clientX - sx; if (Math.abs(dx) > 4) moved = true; m.scrollLeft = sl - dx; });
-      window.addEventListener('pointerup', function(){ if (!down) return; down = false; m.classList.remove('is-grabbing'); auto = !hover; });
+      window.addEventListener('pointermove', function(e){ if (!down) return; var dx = e.clientX - sx; if (Math.abs(dx) > 4) moved = true; pos = sl - dx; m.scrollLeft = pos; });
+      window.addEventListener('pointerup', function(){ if (!down) return; down = false; pos = m.scrollLeft; m.classList.remove('is-grabbing'); auto = !hover; });
       m.addEventListener('click', function(e){ if (moved) e.preventDefault(); }, true); // don't click a link after a drag
     });
   })();
