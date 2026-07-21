@@ -407,7 +407,7 @@ footer .brand b { color: var(--gold); }
 @media (prefers-reduced-motion: reduce) { .svc-media, .svc-card { transition:none; } }
 
 /* service/work cards can be links */
-a.svc-card { text-decoration:none; color:inherit; }
+a.svc-card { text-decoration:none; color:inherit; -webkit-user-drag:none; user-select:none; }
 .svc-card img { -webkit-user-drag:none; user-select:none; }
 
 /* ==========================================================================

@@ -246,6 +246,8 @@
       var track = m.querySelector('.svc-track');
       if (!track) return;
       track.insertAdjacentHTML('beforeend', track.innerHTML); // duplicate for a seamless loop
+      m.querySelectorAll('a').forEach(function (a) { a.setAttribute('draggable', 'false'); });
+      m.addEventListener('dragstart', function (e) { e.preventDefault(); }); // stop native link-drag so drag-to-scroll works
       var dir = parseFloat(m.getAttribute('data-dir') || '1');
       var half = 0, auto = true, hover = false, down = false, sx = 0, sl = 0, moved = false;
       function measure(){ half = track.scrollWidth / 2; if (dir < 0 && m.scrollLeft < 1) m.scrollLeft = half; }
