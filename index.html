@@ -29,7 +29,7 @@
         <li><a href="pricing.html">Pricing</a></li>
       </ul>
       <a href="#contact" class="btn btn-primary">Get Started</a>
-      <button class="menu-toggle" onclick="document.querySelector('.menu').style.display='flex'">☰</button>
+      <button class="menu-toggle" aria-label="Menu" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
     </div>
   </header>
 
@@ -270,6 +270,10 @@
       window.addEventListener('pointermove', function(e){ if (!down) return; var dx = e.clientX - sx; if (Math.abs(dx) > 4) moved = true; pos = sl - dx; m.scrollLeft = pos; });
       window.addEventListener('pointerup', function(){ if (!down) return; down = false; pos = m.scrollLeft; m.classList.remove('is-grabbing'); auto = !hover; });
       m.addEventListener('click', function(e){ if (moved) e.preventDefault(); }, true); // don't click a link after a drag
+    });
+    // close the mobile menu when a nav link is tapped
+    document.querySelectorAll('.menu a').forEach(function (a) {
+      a.addEventListener('click', function () { document.querySelector('.menu').classList.remove('open'); });
     });
   })();
   </script>
