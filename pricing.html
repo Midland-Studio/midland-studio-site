@@ -123,6 +123,62 @@
     </div>
   </section>
 
+  <!-- Request form -->
+  <section class="section" id="request">
+    <div class="wrap center">
+      <span class="eyebrow">Start a Project</span>
+      <h2>Tell us what you need</h2>
+      <p class="lead">Fill this out and we'll get back to you fast, usually the same day. No pressure, no jargon.</p>
+    </div>
+    <form class="req-form" id="requestForm" novalidate>
+      <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+      <input type="hidden" name="subject" value="New request from the Midland Studio website">
+      <input type="hidden" name="from_name" value="Midland Studio Website">
+      <input type="checkbox" name="botcheck" style="display:none !important" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <div class="req-row">
+        <div class="req-field"><label for="rName">Name *</label><input type="text" id="rName" name="name" required placeholder="Your name"></div>
+        <div class="req-field"><label for="rEmail">Email *</label><input type="email" id="rEmail" name="email" required placeholder="you@email.com"></div>
+      </div>
+
+      <div class="req-row">
+        <div class="req-field"><label for="rPhone">Phone</label><input type="tel" id="rPhone" name="phone" placeholder="(000) 000-0000"></div>
+        <div class="req-field"><label for="rHeard">How did you hear about us?</label>
+          <select id="rHeard" name="How did you hear about us">
+            <option value="" selected disabled>Choose one</option>
+            <option>Google search</option>
+            <option>Referral / word of mouth</option>
+            <option>Social media</option>
+            <option>Saw one of your websites</option>
+            <option>Other</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="req-field">
+        <label>Services needed <span style="font-weight:400;color:var(--muted)">(select all that apply)</span></label>
+        <div class="req-services">
+          <label class="req-check"><input type="checkbox" name="service" value="Web Design"> Web Design</label>
+          <label class="req-check"><input type="checkbox" name="service" value="SEO"> SEO</label>
+          <label class="req-check"><input type="checkbox" name="service" value="AI Solutions"> AI Solutions</label>
+          <label class="req-check"><input type="checkbox" name="service" value="Business Email"> Business Email</label>
+          <label class="req-check"><input type="checkbox" name="service" value="Local Listings"> Local Listings</label>
+          <label class="req-check"><input type="checkbox" name="service" value="E-Commerce"> E-Commerce</label>
+          <label class="req-check"><input type="checkbox" name="service" value="App Development"> App Development</label>
+          <label class="req-check"><input type="checkbox" name="service" value="Not sure yet"> Not sure yet</label>
+        </div>
+      </div>
+
+      <div class="req-field">
+        <label for="rMsg">Tell us about you and your company <span style="font-weight:400;color:var(--muted)">(optional)</span></label>
+        <textarea id="rMsg" name="about" rows="4" placeholder="A little about your business and what you're hoping to accomplish."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-primary">Send My Request</button>
+      <p class="req-status" id="requestStatus" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
   <section class="section">
     <div class="wrap">
       <div class="cta-band">
@@ -148,6 +204,36 @@
     </div>
     <div class="wrap foot-bottom"><span>© 2026 Midland Studio. All rights reserved.</span><span>Serving the East Coast • Virginia to Florida</span></div>
   </footer>
+
+  <!-- Request form handler (Web3Forms) -->
+  <script>
+  (function () {
+    var form = document.getElementById('requestForm');
+    if (!form) return;
+    var status = document.getElementById('requestStatus');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if ((form.access_key.value || '').indexOf('YOUR_') === 0) {
+        status.style.color = '#c8102e';
+        status.textContent = 'Form isn’t connected yet — email info@themidlandstudio.com.';
+        return;
+      }
+      var fd = new FormData(form);
+      var services = Array.prototype.slice.call(form.querySelectorAll('input[name="service"]:checked')).map(function (c) { return c.value; });
+      fd.delete('service');
+      fd.set('Services needed', services.join(', ') || 'Not specified');
+      status.style.color = '';
+      status.textContent = 'Sending…';
+      fetch('https://api.web3forms.com/submit', { method: 'POST', body: fd })
+        .then(function (r) { return r.json(); })
+        .then(function (data) {
+          if (data.success) { status.style.color = '#1a7f37'; status.textContent = 'Thanks! We got your request and will be in touch soon.'; form.reset(); }
+          else { status.style.color = '#c8102e'; status.textContent = 'Something went wrong. Please email info@themidlandstudio.com.'; }
+        })
+        .catch(function () { status.style.color = '#c8102e'; status.textContent = 'Network error. Please email info@themidlandstudio.com.'; });
+    });
+  })();
+  </script>
 
 </body>
 </html>
