@@ -13,3 +13,10 @@ node_modules/
 *.tmp
 *.log
 ${base}*
+
+# wrangler files
+.wrangler
+.dev.vars*
+!.dev.vars.example
+.env*
+!.env.example
